@@ -36,14 +36,14 @@ const Navbar = () => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/80 shadow-md backdrop-blur-lg' : 'bg-transparent'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-dark-500/80 shadow-md backdrop-blur-lg' : 'bg-transparent'}`}>
       <div className="container-custom flex items-center justify-between h-20">
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2 group">
           <div className="bg-electric-600 text-white p-2 rounded-md transition-transform group-hover:scale-105">
             <Zap size={24} className="transition-all" />
           </div>
-          <span className="font-bold text-xl tracking-tight">VoltEdge</span>
+          <span className="font-bold text-xl tracking-tight text-white">VoltEdge</span>
         </Link>
 
         {/* Desktop menu */}
@@ -54,8 +54,8 @@ const Navbar = () => {
               to={link.path}
               className={`transition-colors duration-200 font-medium relative pb-1 ${
                 isActive(link.path) 
-                  ? 'text-electric-600' 
-                  : 'text-dark-400 hover:text-electric-600'
+                  ? 'text-electric-300' 
+                  : 'text-white hover:text-electric-300'
               }`}
             >
               {link.name}
@@ -80,7 +80,7 @@ const Navbar = () => {
 
         {/* Mobile menu button */}
         <button
-          className="md:hidden text-dark-500 p-2"
+          className="md:hidden text-white p-2"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -90,7 +90,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       <div
-        className={`md:hidden fixed inset-0 z-40 bg-white transform transition-transform duration-300 ease-in-out ${
+        className={`md:hidden fixed inset-0 z-40 bg-dark-600 transform transition-transform duration-300 ease-in-out ${
           mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
@@ -100,11 +100,11 @@ const Navbar = () => {
               <div className="bg-electric-600 text-white p-2 rounded-md">
                 <Zap size={24} />
               </div>
-              <span className="font-bold text-xl tracking-tight">VoltEdge</span>
+              <span className="font-bold text-xl tracking-tight text-white">VoltEdge</span>
             </Link>
             <button
               onClick={() => setMobileMenuOpen(false)}
-              className="text-dark-500 p-2"
+              className="text-white p-2"
               aria-label="Close menu"
             >
               <X size={24} />
@@ -115,8 +115,8 @@ const Navbar = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`border-b border-gray-100 pb-2 ${
-                  isActive(link.path) ? 'text-electric-600 font-medium' : 'text-dark-400'
+                className={`border-b border-gray-100/20 pb-2 ${
+                  isActive(link.path) ? 'text-electric-300 font-medium' : 'text-white'
                 }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
