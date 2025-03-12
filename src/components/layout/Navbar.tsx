@@ -55,7 +55,7 @@ const Navbar = () => {
               className={`transition-colors duration-200 font-medium relative pb-1 ${
                 isActive(link.path) 
                   ? 'text-electric-600' 
-                  : 'text-dark-500 hover:text-electric-600'
+                  : 'text-dark-400 hover:text-electric-600'
               }`}
             >
               {link.name}
@@ -116,7 +116,7 @@ const Navbar = () => {
                 key={link.path}
                 to={link.path}
                 className={`border-b border-gray-100 pb-2 ${
-                  isActive(link.path) ? 'text-electric-600 font-medium' : 'text-dark-500'
+                  isActive(link.path) ? 'text-electric-600 font-medium' : 'text-dark-400'
                 }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
