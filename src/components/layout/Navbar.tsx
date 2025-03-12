@@ -1,10 +1,13 @@
+
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Zap, Menu, X } from 'lucide-react';
+
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
@@ -12,9 +15,11 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [location.pathname]);
+
   const navLinks = [{
     name: 'Home',
     path: '/'
@@ -34,11 +39,13 @@ const Navbar = () => {
     name: 'Career',
     path: '/career'
   }];
+
   const isActive = (path: string) => {
     if (path === '/' && location.pathname === '/') return true;
     if (path !== '/' && location.pathname.startsWith(path)) return true;
     return false;
   };
+
   return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-dark-500/80 shadow-md backdrop-blur-lg' : 'bg-transparent'}`}>
       <div className="container-custom flex items-center justify-between h-20">
         {/* Logo */}
@@ -59,9 +66,9 @@ const Navbar = () => {
 
         {/* Contact Button */}
         <div className="hidden md:block">
-          <Link to="/#contact" className="bg-electric-600 hover:bg-electric-700 text-white px-5 py-2.5 rounded-md transition-all duration-300 ease-in-out hover:shadow-lg">
+          <a href={location.pathname === '/' ? '#contact' : '/#contact'} className="bg-electric-600 hover:bg-electric-700 text-white px-5 py-2.5 rounded-md transition-all duration-300 ease-in-out hover:shadow-lg">
             Contact Us
-          </Link>
+          </a>
         </div>
 
         {/* Mobile menu button */}
@@ -88,12 +95,13 @@ const Navbar = () => {
             {navLinks.map(link => <Link key={link.path} to={link.path} className={`border-b border-gray-100/20 pb-2 ${isActive(link.path) ? 'text-electric-300 font-medium' : 'text-white'}`} onClick={() => setMobileMenuOpen(false)}>
                 {link.name}
               </Link>)}
-            <Link to="/#contact" className="bg-electric-600 text-white py-3 mt-4 rounded-md text-center" onClick={() => setMobileMenuOpen(false)}>
+            <a href={location.pathname === '/' ? '#contact' : '/#contact'} className="bg-electric-600 text-white py-3 mt-4 rounded-md text-center" onClick={() => setMobileMenuOpen(false)}>
               Contact Us
-            </Link>
+            </a>
           </nav>
         </div>
       </div>
     </header>;
 };
+
 export default Navbar;
