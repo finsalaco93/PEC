@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Zap, ShieldCheck, Cpu, Wrench, PlugZap, Factory } from 'lucide-react';
@@ -82,7 +81,7 @@ const Services = () => {
           <div className="container-custom">
             <SectionHeader
               title="Comprehensive Electrical Services"
-              subtitle="Expert Solutions for Commercial & Industrial Projects"
+              eyebrow="Expert Solutions for Commercial & Industrial Projects"
               description="Our team of certified electricians delivers a wide range of services designed to meet the unique requirements of modern businesses."
             />
 
@@ -112,7 +111,7 @@ const Services = () => {
           <div className="container-custom">
             <SectionHeader
               title="Our Working Process"
-              subtitle="How We Deliver Excellence"
+              eyebrow="How We Deliver Excellence"
               description="We follow a structured approach to ensure high-quality results for every electrical project."
             />
 

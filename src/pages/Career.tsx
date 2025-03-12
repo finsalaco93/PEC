@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Briefcase, MapPin, Clock, Check } from 'lucide-react';
@@ -6,7 +5,6 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import SectionHeader from '@/components/ui/SectionHeader';
 
-// Sample job listings data
 const jobListings = [
   {
     id: 1,
@@ -123,7 +121,7 @@ const Career = () => {
           <div className="container-custom">
             <SectionHeader
               title="Why Work With Us"
-              subtitle="Build Your Career at VoltEdge"
+              eyebrow="Build Your Career at VoltEdge"
               description="Join a team that values innovation, professional growth, and a positive work environment."
             />
             
@@ -175,7 +173,7 @@ const Career = () => {
           <div className="container-custom">
             <SectionHeader
               title="Current Openings"
-              subtitle="Explore Available Positions"
+              eyebrow="Explore Available Positions"
               description="Find your next career opportunity with VoltEdge. We're looking for talented individuals to join our growing team."
             />
             
@@ -284,7 +282,7 @@ const Career = () => {
           <div className="container-custom">
             <SectionHeader
               title="Our Hiring Process"
-              subtitle="What to Expect When You Apply"
+              eyebrow="What to Expect When You Apply"
               description="We've designed a transparent and efficient hiring process to find the best talent for our team."
             />
             

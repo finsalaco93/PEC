@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '@/components/layout/Navbar';
@@ -99,7 +98,7 @@ const Projects = () => {
           <div className="container-custom">
             <SectionHeader
               title="Featured Projects"
-              subtitle="Our Work Speaks For Itself"
+              eyebrow="Our Work Speaks For Itself"
               description="Browse through our diverse portfolio of successfully completed commercial and industrial electrical projects."
             />
             
@@ -146,7 +145,7 @@ const Projects = () => {
           <div className="container-custom">
             <SectionHeader
               title="Client Testimonials"
-              subtitle="What Our Clients Say"
+              eyebrow="What Our Clients Say"
               description="Our clients' satisfaction is the true measure of our success. Here's what they have to say about working with VoltEdge."
             />
 

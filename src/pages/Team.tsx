@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Linkedin, Twitter, Mail } from 'lucide-react';
@@ -94,7 +93,7 @@ const Team = () => {
           <div className="container-custom">
             <SectionHeader
               title="Our Leadership Team"
-              subtitle="The Experts Behind Our Success"
+              eyebrow="The Experts Behind Our Success"
               description="Meet the dedicated professionals who lead VoltEdge with expertise, innovation, and a commitment to excellence."
             />
             
@@ -144,7 +143,7 @@ const Team = () => {
           <div className="container-custom">
             <SectionHeader
               title="Our Core Values"
-              subtitle="What Drives Us Every Day"
+              eyebrow="What Drives Us Every Day"
               description="These principles guide our team and define how we work together to deliver exceptional electrical services."
             />
 
